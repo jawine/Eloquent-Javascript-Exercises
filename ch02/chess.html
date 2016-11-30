@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Chess Board Maker</title>
+    <style type="text/css">
+        .main, .board{
+            text-align: center;
+            margin: auto;
+            display: inline-block;
+            width: 50%;
+        }
+        
+        .sq {
+            height: 16px;
+            width: 16px;
+            
+        }
+        .sq-blk {
+            background-color: black;
+            border: 1px solid black;
+            
+        }
+        .sq-wht {
+            background-color: white;
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+    <div class="board" id="board">
+        <table>
+            <tr>
+                <td class="sq sq-blk"></td>
+                <td class="sq sq-wht"></td>
+                <td class="sq sq-blk"></td>
+                <td class="sq sq-wht"></td>
+            </tr>    
+        </table>
+    </div>
+    <p>Make a chess board that is <input type="text" id="width" value="width"> squares wide by <input type="text" id="height" value="height"> squares high</p><br />
+    <button type="submit" id="button">Make it!</button>
+    </div>
+</body>
+</html>

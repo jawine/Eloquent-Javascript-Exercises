@@ -16,18 +16,17 @@ When you have a program that generates this pattern, define a variable size = 8 
 given width and height
 */
 
-function chessBoard(width, height){
-    var countRows;
-    var output = "";
-    for (countRows = 0; countRows < height; countRows++){
-        //check if even
-        if (countRows % 2 === 0){
-            output += (" #".repeat(width/2) + "\n");
-        } else {
-            output += ("# ".repeat(width/2) + "\n");
-        }
+function buildChessBoard(size){
+    var oddRow = ('# '.repeat(Math.floor(size/2)));
+    var evenRow = (' #'.repeat(Math.floor(size/2)));
+    var output = [];
+    while (output.length < size){
+        output.push(oddRow);
+        output.push(evenRow);
     }
-    console.log(output);
+    console.log(output.join('\n'));
 }
-
-chessBoard(8, 8); // works for any even width... odd widths result in number of columns being equal to width - 1
+// buildChessBoard(8) // works as expected for even numbers
+// buildChessBoard(12); 
+buildChessBoard(5); // rounds down to nearest even numbers when given odd
+// buildChessBoard(11);
