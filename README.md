@@ -1,7 +1,9 @@
 # Eloquent-Javascript-Exercises
 
 My solutions to the code exercises in Eloquent Javascript, written by Marijn Haverbeke and published
-by No Starch Press. http://eloquentjavascript.net/
+by No Starch Press. 
+
+[Link to Booksite](http://eloquentjavascript.net/)
 
 Eloquent Javascript is licensed under a Creative Commons attribution-noncommercial license. 
 
@@ -11,10 +13,10 @@ Minimally, I will try to develop my own working (if messy) solution before looki
 
 Current progress:
 
-Chapter 02 code exercises initial commit 11/29/16:
--See ch02/looping_a_triangle.js, ch02/fizz_buzz.js, and ch02/chess_board.js
--Not very happy with my solution for the Chess Board problem
--I need to refactor it so that odd-numbered "width" arguments passed into chessBoard() provide the expected number of columns 
+Chapter 02 code exercises initial commit 11/29/16:  
+- See ch02/looping_a_triangle.js, ch02/fizz_buzz.js, and ch02/chess_board.js  
+- Not very happy with my solution for the Chess Board problem  
+- I need to refactor chessBoard() so that odd-numbered "width" arguments passed into chessBoard() provide the expected number of columns 
 
 
 
