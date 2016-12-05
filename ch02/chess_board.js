@@ -26,7 +26,7 @@ function buildChessBoard(size){
     }
     console.log(output.join('\n'));
 }
-// buildChessBoard(8) // works as expected for even numbers
+buildChessBoard(8) // works as expected for even numbers
 // buildChessBoard(12); 
 buildChessBoard(5); // rounds down to nearest even numbers when given odd
 // buildChessBoard(11);

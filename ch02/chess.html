@@ -28,18 +28,66 @@
 </head>
 <body>
     <div class="main">
-    <div class="board" id="board">
-        <table>
-            <tr>
-                <td class="sq sq-blk"></td>
-                <td class="sq sq-wht"></td>
-                <td class="sq sq-blk"></td>
-                <td class="sq sq-wht"></td>
-            </tr>    
+        <table class="board" id="board">
+   
         </table>
     </div>
-    <p>Make a chess board that is <input type="text" id="width" value="width"> squares wide by <input type="text" id="height" value="height"> squares high</p><br />
-    <button type="submit" id="button">Make it!</button>
+    <p>Make a chess board of size <input type="text" id="size"></p><br />
+    <button type="submit" id="make">Make it!</button>
     </div>
+    
+    
+    <script type="text/javascript">
+    
+        var make_button = document.getElementById('make');
+        make_button.addEventListener('click', boardPainter, false);
+        
+        var boardPainter = function(){
+            var board = document.getElementById('board');
+            
+            var board_size = document.getElementById('size').value;
+            
+            var board_arr = makeBoard(board_size);
+            
+            board_arr.forEach(function(elem){
+                board.appendChild(elem);
+            });
+            
+            make_button.removeEventListener('click', boardPainter, false);
+        };
+        
+        var makeBoard = function(size){
+            var elem_array = [];
+            var column_count = 0;
+        // append to the array until length === size+2 (need to add opening and closing <tr> tags)
+            while (column_count !== elem_array.length+2){
+                elem_array.push(getElements(column_count, size));
+                column_count++;
+            }
+        return elem_array;
+        };
+
+        // helper function to allow correct sequence of table elements
+        var getElements = function(progress, target_size){
+        // on each call, will return the correct element to be placed into an array
+            if (progress === 0){
+                return '<tr>';
+            } else if (progress !== 0){
+        // place </tr> tag when progress reaches targetSize+1
+                if (progress === target_size+1){
+                    return '</tr>';
+                } else if (progress % 2 !== 0){
+        // return black squares for odd numbered columns
+                    return '<td class="sq sq-blk"></td>';
+                } else if (progress % 2 === 0){
+        // return white squares for even numbered columns
+                    return '<td class="sq sq-wht"></td>';
+                }
+            }
+        };
+        
+
+        
+    </script>
 </body>
 </html>
